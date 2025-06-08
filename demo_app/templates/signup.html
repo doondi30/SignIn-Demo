@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SC | Signup</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+  <div class="login-container">
+    <br>
+    <h1 class="logo">SC<span class="dot">.</span></h1>
+    <h2>Create your account</h2>
+    <p class="new-here">Already have an account? <a href="{% url 'loginpage' %}"><b>Sign in</b></a></p>
+
+    <form id="signupForm" method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+    <label for="work-email">Work email</label>
+    <input type="email" id="work-email" name="email" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+
+    <label for="confirm-password">Confirm password</label>
+    <input type="password" id="confirm-password" name="conf_pass" required />
+      <p style="color : red; font-weight:bold;">
+      {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+      {% endif %}
+    </p>
+    <a href="{% url 'loginpage' %}"><button type="submit" class="submit-btn pink">Sign up</button></a>
+    </form>
+
+
+    <div class="divider">Or continue with</div>
+
+    <div class="social-login">
+      <button class="google-btn">
+        <img src="{% static 'google-logo.png' %}" alt="Google" height="20" class="btn-icon"> Google
+      </button>
+      <button class="microsoft-btn">
+        <img src="{% static 'ms-logo.png' %}" alt="Microsoft" height="20" class="btn-icon"> Microsoft
+      </button>
+    </div>
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
