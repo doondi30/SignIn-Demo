@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | SC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="logo">SC<span class="dot">.</span></h1>
+    <h2>Sign in to your account</h2>
+    <p class="new-here">New here? <a href="signup.html"><b>Create an account</b></a></p>
+
+    <div class="form-wrapper">
+      <form id="loginForm">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="email" required class="sm-input" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required class="sm-input" />
+
+        <label class="remember">
+          <input type="checkbox" /> Remember me
+        </label>
+
+        <button type="submit" class="submit-btn">Sign in</button>
+      </form>
+
+      <div class="divider">Or continue with</div>
+
+      <div class="social-login">
+        <button class="google-btn">
+          <img src="google-logo.png" alt="Google" height="20" class="btn-icon"> Google
+        </button>
+        <button class="microsoft-btn">
+          <img src="ms-logo.png" alt="Microsoft" height="20" class="btn-icon"> Microsoft
+        </button>
+      </div>
+    </div>
+
+    <a href="#" class="help-link"><b>Can’t log in?</b></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
